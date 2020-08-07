@@ -15,4 +15,19 @@ class CategoriesController < ApplicationController
         }
         render json: CategorySerializer.new(category, options)
     end
+
+    def create
+        category = Category.create(category_params(:name))
+        if category.save
+            render json: CategorySerializer.new(category)
+        else
+            render json: {message: 'Category already exists!'}
+        end
+    end
+
+    private
+
+    def category_params(*args)
+        params.require(:category).permit(*args)
+    end
 end
