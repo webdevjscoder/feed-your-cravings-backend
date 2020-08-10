@@ -19,10 +19,22 @@ class CategoriesController < ApplicationController
     def create
         category = Category.create(category_params(:name))
         if category.save
-            render json: CategorySerializer.new(category)
+            options = {
+                include: [:meals]
+            }
+            render json: CategorySerializer.new(category, options)
         else
             render json: {message: 'Category already exists!'}
         end
+    end
+
+    def destroy
+        options = {
+            include: [:meals]
+        }
+        category = Category.find_by_id(params[:id])
+        category.destroy
+        render json: CategorySerializer.new(category, options)
     end
 
     private
