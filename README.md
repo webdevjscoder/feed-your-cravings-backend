@@ -1,24 +1,30 @@
-# README
+## Description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Feed Your Craving. A place where you can select or create your own meals. Feel free to explore and have fun creating random meals. For this you will need the Front-End part of this project https://github.com/webdevjscoder/feed-your-cravings-frontend.
 
-Things you may want to cover:
 
-* Ruby version
+## Setup
 
-* System dependencies
+First download or clone this repository
 
-* Configuration
+Then in the terminal run
 
-* Database creation
+```ruby
+    bundle install
+```
 
-* Database initialization
+Then run
 
-* How to run the test suite
+```ruby
+    rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Then open up your local server in your favorite browser.
 
-* Deployment instructions
+## Contributor's Guide
 
-* ...
+Bug reports and pull requests are welcome on GitHub.
+
+## License
+
+The gem is available as open source under the terms of the MIT License.
